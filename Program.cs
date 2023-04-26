@@ -2,16 +2,16 @@
 
 Celular pocket = new Celular();
 
-Console.WriteLine($"Qual a cor do celular:");
+Console.Write($"Qual a cor do celular ?");
 pocket.Color = Console.ReadLine();
 
-Console.WriteLine($"Qual é o modelo do celular");
+Console.Write($"Qual é o modelo do celular ?");
 pocket.Modelo = Console.ReadLine();
 
-Console.WriteLine($"");
+Console.Write($"Qual é o tamanho do celular ?");
 pocket.Tamanho = Console.ReadLine();
 
-Console.WriteLine($"Deseja ligar o celuar ? s|n ?");
+Console.Write($"Deseja ligar o celuar ? s|n ?");
 string resposta = Console.ReadLine();
 
 switch (resposta)
@@ -26,7 +26,45 @@ switch (resposta)
 
 while(pocket.Ligado == true)
 {
-    Console.WriteLine($"Deseja fazer uma ligação? s|n ?");
+    Console.Write($"Deseja fazer uma ligação? s|n ?");
+    resposta = Console.ReadLine();
+    
+    if (resposta == "s")
+    {
+        pocket.FazerLigacao();
+    }
+    else if (resposta == "n")
+    {
+        Console.WriteLine($"okay okay");
+        
+        
+    }
+
+    Console.Write($"Deseja enviar mensagem ?");
+    resposta = Console.ReadLine();
+    
+    if (resposta == "s")
+    {
+        pocket.EnviarMensagem();
+    }
+    else
+    {
+        Console.Write($"Okay Okay");
+        
+    }
+
+    Console.Write($"Deseja desligar o celular ?");
+    resposta = Console.ReadLine();
+    
+    if (resposta == "s")
+    {
+        pocket.Desligar();
+    }
+    else
+    {
+        pocket.Ligado = true;
+    }
+    
     
     
 }
